@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>PuClone</title>
+    <style type="text/css">
+        html, body {
+            margin:0px; font-size: 10pt;
+            font-family: 微軟正黑體, Arial, Helvetica, sans-serif;
+        }
+        #c1{
+            position:relative;
+            top:16px;
+            width:100%;
+            height:auto;
+            border: solid 1px #E5E5E5;
+        }
+        #c2{
+            width:95%;
+            height:auto;
+            margin:15px auto 0px;
+            border-radius: 5px;
+            border: solid 1px #E5E5E5;
+        }
+        #c3{
+            width:95%;
+            height:auto;
+            margin:0px auto;
+            border-radius: 5px;
+            border: solid 1px #E5E5E5;
+            background-color: #D1ECF1;
+        }
+        #btn{
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            height:38px;
+            width:auto;
+            border:0; 
+            border-radius: .25rem;
+            padding: .375rem .75rem;
+            margin: 28px 8px;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: #007BFF;
+            color: white;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        #fontc{
+            color: #0C5460;
+        }
+        #sm{
+            position: relative;
+            padding: .75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+        }
+        b{
+            font-size: 16px;
+        }
+        .loader {
+            border: 15px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 15px solid #FDBD00;
+            width: 100px;
+            height: 100px;
+            -webkit-animation: spin 1s linear infinite; /* Safari */
+            animation: spin 1s linear infinite;
+        }
+        .loading {
+            position: absolute;
+            z-index: 997;
+            border: 15px solid #FDBD00;
+            border-right: 15px solid #fff;
+            border-bottom: 15px solid #fff;
+            border-radius: 100%;
+            height: 100px;
+            width: 100px;
+            -webkit-animation: spin 1s infinite linear;
+            -moz-animation: spin 1s infinite linear;
+            -ms-animation: spin 1s infinite linear;
+            -o-animation: spin 1s infinite linear;
+            animation: spin 1s infinite linear;
+        }
+        .loading2 {
+            position: absolute;
+            z-index: 998;
+            border: 5px solid #168;
+            border-top: 5px solid #fff;
+            border-left: 5px solid #fff;
+            border-radius: 100%;
+            height: 120px;
+            width: 120px;
+            -webkit-animation: loading 2s infinite linear;
+            -moz-animation: loading 2s infinite linear;
+            -ms-animation: loading 2s infinite linear;
+            -o-animation: loading 2s infinite linear;
+            animation: spin 2s infinite linear;
+        }
+        .floatlogo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            color: #168;
+            display: inline-block;
+            margin: 15px;
+            padding: 0;
+        }
+        .alert {
+            position: relative;
+            padding: .75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+        }
+        .s1{
+            display: none;
+        }
+        .s2{
+            display: "";
+        }
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="c1">
+      <div id="c2"  style="position: relative;">
+        <br>
+        <b id="current_date" style="font-size: 16px;">&emsp;入校日:</b>
+        <div style="position: absolute; top: 0; right: 0; width: 130px; height: 130px;">
+            <div class="loading" style="position: absolute; right: 0%; top: 0%;"></div>
+            <div class="loading2"></div>
+            <img src="http://www1.pu.edu.tw/~s1101881/puclone/pulogo.png" class="floatlogo" style="opacity: 1;">
+        </div>
+        <br>
+        <b style="font-size: 16px; line-height: 40px; position: relative;">&emsp;事由：(參加活動)邀請許景淼業師到社團分享</b>
+        <hr width="90%" style="border: solid 1px #E5E5E5;">
+        <br>
+        <b>&emsp;填表人基本資料&nbsp;</b><a>Basic Info.：</a>
+        <br>
+        <strong id="carnum" style="font-size: 22px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: #007BFF;">&emsp;車號：MNN-6777</strong>
+        <br>
+        <b>&emsp;聯絡人：<b id="uid">蘇家宏 <u>0931368278</u></b></b>
+        <hr width="90%" style="border: solid 1px #E5E5E5;">
+        <br>
+        <b>&emsp;校內聯絡資訊&nbsp;</b><a>Basic Info.：</a>
+        <br>
+        <b>&emsp;邀請單位：資訊傳播工程學系<b>
+        <br>
+        <b>&emsp;承辦人：陳文敬 </b><b><u>0931600952</u></b>
+        <br><br>
+      </div>
+      <div id="c3" style="color: #0C5460;">
+        <div id="sm" style="padding-bottom: 3rem!important;">
+            <img src="http://www1.pu.edu.tw/~s1101881/puclone/qrcode.png" style="margin:0 15px 0 0; float: left;"/>
+            <small>
+                ★提醒您，在校園請維持手部清潔，保持經常洗手習慣，每日測量體溫，配戴口罩，倘有相關症狀請主動
+                聯絡 1922 防疫專線。Please wash your hands with soap regularly, monitor body temperature every
+                day, wear surgical masks, and if you have symptoms please dial 1922.<br>
+                ★此問卷調查之個人相關資料，僅提供政府衛生相關單位、教育部及本校防疫需求使用。<br>
+                ★請配合「中央流行疫情指揮中心」頒布之「具感染風險民眾追蹤管理機制」，如未依規定配合辦理，將
+                依「傳染病防治法」進行相關罰則。
+            </small>
+        </div>
+      </div>
+      <div align="center" class="alert" role="alert">
+        <a> 
+            <button id="btn" style="margin-right: 1rem!important;">列印</button>
+            <button id="btn" onclick="b()">修改資料</button>
+        </a>
+      </div>
+     
+      <div id="form1" class="s1">
+      <br>
+      <select id="nam">
+        <option>名子</option>
+        <option>林誼均</option>
+      </select>
+      <button onclick="c()">修改</button>
+      </div>
+    </div> 
+    <script>
+        date = new Date();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        document.getElementById("current_date").innerHTML = "<b>&emsp;入校日:&emsp;</b>"+"<b>"+(month + "/" + day)+"</b>";
+        // function a(){
+        //     date = new Date();
+        //     //year = date.getFullYear();
+        //     month = date.getMonth() + 1;
+        //     day = date.getDate();
+        //     document.getElementById("current_date").innerHTML = "<b>&emsp;入校日:&emsp;</b>"+"<b>"+(month + "/" + day)+"</b>";
+        // }
+        function b(){
+            document.getElementById("form1").className="s2";
+        }
+        function c(){
+            document.getElementById("form1").className="s1";
+            //alert(document.getElementById('uid').value);
+            // document.getElementById("carnum").innerHTML= "&emsp;"+document.getElementById("num").value;
+            // document.getElementById("uid").innerHTML= document.getElementById("nam").value + " " + "<u>" + document.getElementById("tel").value + "</u>";
+            if(document.getElementById("nam").value == "林誼均"){
+                document.getElementById("carnum").innerHTML= "&emsp;"+"MXC-8660";
+                document.getElementById("uid").innerHTML= "林誼均" + " " + "<u>" + "0979681791" + "</u>";
+            }
+        }
+        
+    </script>
+</body>
+</html>
